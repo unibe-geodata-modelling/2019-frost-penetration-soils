@@ -3,6 +3,8 @@
 from PIL import Image
 import glob
 
+os.chdir('C:/Users/User/Documents/geodataanalysis/soliflu')  # set working folder
+
 # make list of all frames in "pics" folder. Replace "pics" by "pics2400", "pics2500" or "pics2600"
 frames = []
 imgs = glob.glob("pics/*.png")  #  (note: for me... for filename in glob.glob(('pics' + str(elevation) + '/*.png')):)
