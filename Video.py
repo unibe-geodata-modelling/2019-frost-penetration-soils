@@ -5,6 +5,9 @@ import cv2
 import numpy as np
 import glob
 
+# set working folder
+os.chdir('C:/Users/User/Documents/geodataanalysis/soliflu')  
+
 # make list of all frames in "pics" folder
 img_array = []
 for filename in glob.glob(('pics' + str(elevation) + '/*.png')):
