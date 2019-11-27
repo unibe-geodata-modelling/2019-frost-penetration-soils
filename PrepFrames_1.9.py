@@ -18,7 +18,7 @@ file = pd.read_csv('alldata_utf8.csv', sep=',') # load data
 file['date.time'] = pd.to_datetime(file['date.time'], format='%d.%m.%Y %H:%M') # define date and time format in data
 
 # choose the time for which data will be visualized --> from "starttag" to "endtag" (date and time must be definded)
-starttag = datetime.strptime("01.01.2015 18:00", '%d.%m.%Y %H:%M')  # first possible: 2600: "01.08.2014",
+starttag = datetime.strptime("03.07.2015 18:00", '%d.%m.%Y %H:%M')  # first possible: 2600: "01.08.2014",
                                                                     #                  2400: "01.11.2014"
 endtag = datetime.strptime('03.07.2015 22:00', '%d.%m.%Y %H:%M')
 
@@ -169,84 +169,4 @@ for i in datumsliste:
     else:
         if os.path.exists(BilderOrt):
             print('Frame ' + str(i) + ' already exists')
-
-
-#################################
-# andere Art ein GIF zu machen von Mubashshir
-
-import imageio
-import glob
-
-
-def create_gif(path, duration, outfile):
-
-     """Function to create animation"""
-
-     filenames=sorted(glob.glob(path+'*')) # sort the files in the path
-
-     images = [] # empty list to store images
-
-     for filename in filenames:
-         images.append(imageio.imread(filename))
-         print(filename)
-     output_file = outfile
-     imageio.mimsave(output_file, images, duration=duration)
-
-     return None
-
-
-path='path/to/file/'
-outfile = 'output.gif'
-duration=0.03  # no. of seconds b/w each frame
-create_gif('picsII/', duration, outfile='outputgif.gif')
-
-create_gif(path, duration, outfile)
-
-
-#####################################
-# make GIF
-
-from PIL import Image
-import glob
-
-# make list of all frames in "pics" folder. Replace "pics" by "pics2400", "pics2500" or "pics2600"
-frames = []
-imgs = glob.glob("pics/*.png")  #  (note: for me... for filename in glob.glob(('pics' + str(elevation) + '/*.png')):)
-for i in imgs:
-    new_frame = Image.open(i)
-    frames.append(new_frame)
-    print(i)
-
-
-# Save into a GIF file that loops (forever --> loop=0)
-frames[0].save(('GIF_' + str(elevation) + '.gif'), format='GIF',
-               append_images=frames[200:400],  # nummber and range of appended frames can be limited (i.e. in case of dificulty with memory) 
-               save_all=True,
-               duration=0.05, loop=0) # set time for eacht frame (duration) and how often the GIF will be repeated (0 --> forever)
-frames = []
-
-#####################################
-# make video (.mp4 bzw *'mp4v' kann durch .avi bzw 'DIVX' ersetzt werden um anderes Videoformat zu machen)
-
-import cv2
-import numpy as np
-import glob
-
-# make list of all frames in "pics" folder
-img_array = []
-for filename in glob.glob(('pics' + str(elevation) + '/*.png')):
-    img = cv2.imread(filename)
-    height, width, layers = img.shape
-    size = (width, height)
-    img_array.append(img)
-    print(len(img_array))  # just to have some feedback while it's working
-
-# define video properties, the number --> frames per sec (FPS)
-out = cv2.VideoWriter(('VIDEO' + str(elevation) + '.avi'), cv2.VideoWriter_fourcc(*'DIVX'), 30, size) 
-
-# create video
-for i in range(len(img_array)):
-    out.write(img_array[i])
-out.release()
-img_array = []  # free memory
 
