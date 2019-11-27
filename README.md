@@ -14,19 +14,19 @@ A scheme of a solifluction lobe (.png) is colorized depending on measurment valu
   -  pandas
   -  numpy
   -  Pillow
-  -  Imageio
-
+  -  imageio
+  -  opencv-python
 ## How to use
-- define working directory in line ----
 - definde the timeframe of the data to be visualized
   - possible ...
 - there are three scripts
-  - ... prepares frames to be packed in a video or gif with the other scrips
+  - ... prepares frames to be packed in a video or gif with the other scripts
   - ... packs the beforehand generated images (.png) to a video
   - ... packs the beforehand generated images to a gif
   
  ## Result
-  - you will find a folder with images (one image each hour by default)
+  - you will find a folder with images in the working directory (one image each hour by default)
+  - a video file or GIF file will be saved
   
 ## What can be adjusted
   - 
