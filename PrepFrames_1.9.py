@@ -33,7 +33,7 @@ except OSError as e:
         print("Folder already exists")
     else:
         raise
-
+Ordner = 'pics' + str(elevation) + '/'
 
 cmap = plt.cm.get_cmap('coolwarm')
 hmap = plt.cm.get_cmap('winter_r')
@@ -68,7 +68,7 @@ while datum <= endtag:
 
 # save images/ frames in the before created "pics" folder 
 for i in datumsliste:
-    pfad = ('pics2600/', str(elevation), i.strftime('_%Y.%m.%d_%H.%M'), '.png')
+    pfad = (Ordner, str(elevation), i.strftime('_%Y.%m.%d_%H.%M'), '.png')
     BilderOrt = ''.join(pfad)
     if not os.path.exists(BilderOrt):  #  check if frame is already there
         try:  # in case of a missing time step in the data, go to next time step
@@ -153,7 +153,7 @@ for i in datumsliste:
             date = i.strftime('%d.%m.%Y %H:%M')
 
             plt.text(100,100,1, text="Volumetric Water Content (VWC) and" + "\n" + "Temperature Below Ground", fontsize=7, weight='demibold')
-            plt.text(100, 230, 1, text="Altitude: " + str(elevation), fontsize=7)
+            plt.text(100, 230, 1, text="Altitude: " + str(elevation) + " m a.s.l.", fontsize=7)
             plt.text(100, 480, 1, text=date[:10] + "\n" + date[11:], color='black', fontsize=7)
 
             ax1.set_axis_off()
