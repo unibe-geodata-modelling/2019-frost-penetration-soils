@@ -3,7 +3,10 @@
 from PIL import Image
 import glob
 
-os.chdir('C:/Users/User/Documents/geodataanalysis/soliflu')  # set working folder
+# set current directory as working directory
+dir_path = os.path.dirname(os.path.realpath(__file__))
+os.chdir(dir_path)
+# os.chdir('C:/Users/User/Documents/geodataanalysis/soliflu')  # set working directory manually
 
 # make list of all frames in "pics" folder. Replace "pics" by "pics2400", "pics2500" or "pics2600"
 frames = []
