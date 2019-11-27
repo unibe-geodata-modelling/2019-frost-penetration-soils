@@ -20,7 +20,7 @@ else:
 
 # make list of all frames in "pics" folder. Replace "pics" by "pics2400", "pics2500" or "pics2600"
 frames = []
-imgs = glob.glob('pics' + str(elevation) + '/*.png')  #  (note: for me... for filename in glob.glob(('pics' + str(elevation) + '/*.png')):)
+imgs = glob.glob('pics' + str(elevation) + '/*.png') 
 for i in imgs:
     new_frame = Image.open(i)
     frames.append(new_frame)
@@ -29,7 +29,7 @@ for i in imgs:
 
 # Save into a GIF file that loops (forever --> loop=0)
 frames[0].save(('GIF_' + str(elevation) + '.gif'), format='GIF',
-               append_images=frames[200:400],  # nummber and range of appended frames can be limited (i.e. in case of dificulty with memory) 
+               append_images=frames[:],  # nummber and range of appended frames can be limited (i.e. in case of dificulty with memory) 
                save_all=True,
                duration=0.05, loop=0) # set time for eacht frame (duration) and how often the GIF will be repeated (0 --> forever)
 frames = []
