@@ -19,7 +19,12 @@ A scheme of a solifluction lobe (.png) is colorized depending on measurment valu
   
 ## How to use
 - definde the timeframe of the data to be visualized
-  - possible ...
+  - possible choices are within:
+  
+    | Start     | End       |
+    |-----------|-------    |
+    |01.09.2015 |30.06.2017 |
+    
 - there are three scripts
   - PrepFrames.py prepares frames to be packed in a video or gif with the other scripts
   - makeVideo.py packs the beforehand generated images (.png) to a video
@@ -37,4 +42,4 @@ A scheme of a solifluction lobe (.png) is colorized depending on measurment valu
   - fps (gif und video)
   - hours to skip
 
-Editors: Martina Hasler, Lukas Munz
+Authors: Martina Hasler, Lukas Munz
