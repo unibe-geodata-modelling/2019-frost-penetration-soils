@@ -2,6 +2,7 @@
 
 from PIL import Image
 import glob
+import os
 
 # set current directory as working directory
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -23,7 +24,7 @@ imgs = glob.glob('pics' + str(elevation) + '/*.png')  #  (note: for me... for fi
 for i in imgs:
     new_frame = Image.open(i)
     frames.append(new_frame)
-    print(i)
+    print(i) # just to get some feedback while it is working
 
 
 # Save into a GIF file that loops (forever --> loop=0)
