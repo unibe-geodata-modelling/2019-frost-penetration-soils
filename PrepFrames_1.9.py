@@ -9,7 +9,10 @@ import matplotlib.colors as colors
 
 from datetime import datetime, timedelta
 
-os.chdir('C:/Users/User/Documents/geodataanalysis/soliflu')  # set working folder
+# set current directory as working directory
+dir_path = os.path.dirname(os.path.realpath(__file__))
+os.chdir(dir_path)
+# os.chdir('C:/Users/User/Documents/geodataanalysis/soliflu')  # set working directory manually
 
 file = pd.read_csv('alldata_utf8.csv', sep=',') # load data
 file['date.time'] = pd.to_datetime(file['date.time'], format='%d.%m.%Y %H:%M') # define date and time format in data
