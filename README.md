@@ -6,9 +6,15 @@ The aim of this little project is to visualize data from field masurements in a 
 A scheme of a solifluction lobe (.png) is colorized depending on measurment values of volumetric water content and temperature below ground.
 
 ## Prerequisits
-- Python 3.6
+- Python 3.7
 - Have the file "Schema Blauberg weiss clean.png" in the working directory
 - Have the file "alldata_utf8.csv" also in the working directory
+- Install dependencies:
+  -  matplotlib
+  -  pandas
+  -  numpy
+  -  Pillow
+  -  Imageio
 
 ## How to use
 - define working directory in line ----
@@ -20,7 +26,7 @@ A scheme of a solifluction lobe (.png) is colorized depending on measurment valu
   - ... packs the beforehand generated images to a gif
   
  ## Result
-  - you will find a folder with images (one each hour)
+  - you will find a folder with images (one image each hour by default)
   
 ## What can be adjusted
   - 
