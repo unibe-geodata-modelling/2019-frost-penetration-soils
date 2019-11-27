@@ -5,8 +5,10 @@ import cv2
 import numpy as np
 import glob
 
-# set working folder
-os.chdir('C:/Users/User/Documents/geodataanalysis/soliflu')  
+# set current directory as working directory
+dir_path = os.path.dirname(os.path.realpath(__file__))
+os.chdir(dir_path)
+# os.chdir('C:/Users/User/Documents/geodataanalysis/soliflu')  # set working directory manually
 
 # make list of all frames in "pics" folder
 img_array = []
