@@ -18,12 +18,14 @@ A scheme of a solifluction lobe (.png) is colorized depending on measurment valu
   -  opencv-python
   
 ## How to use
-- definde the timeframe of the data to be visualized
-  - possible choices are within:
+- definde the timeframe of the data to be visualized in Line 21 and line 23   
+  - it is best to choose within:
   
     | Start     | End       |
     |-----------|-------    |
     |01.09.2015 |30.06.2017 |
+    
+    One image will be created every houer within the timeframe unless definded differently (see section "What can be adjusted")
     
 - there are three scripts
   - PrepFrames.py prepares frames to be packed in a video or gif with the other scripts
