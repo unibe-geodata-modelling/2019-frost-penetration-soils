@@ -16,17 +16,25 @@ A scheme of a solifluction lobe (.png) is colorized depending on measurment valu
   -  Pillow
   -  imageio
   -  opencv-python
+  
 ## How to use
 - definde the timeframe of the data to be visualized
   - possible ...
 - there are three scripts
-  - ... prepares frames to be packed in a video or gif with the other scripts
-  - ... packs the beforehand generated images (.png) to a video
-  - ... packs the beforehand generated images to a gif
+  - PrepFrames.py prepares frames to be packed in a video or gif with the other scripts
+  - makeVideo.py packs the beforehand generated images (.png) to a video
+  - makeGIF.py packs the beforehand generated images to a gif file
+ 
+- The scripts can somehow not be executed entirely via the "run" button in PyCharm. Select all (Ctrl + A) and "run" works however.
   
  ## Result
   - you will find a folder with images in the working directory (one image each hour by default)
-  - a video file or GIF file will be saved
+  - a video file or GIF file will be saved in the working directory
   
 ## What can be adjusted
-  - 
+  - time
+  - elevation
+  - fps (gif und video)
+  - hours to skip
+
+Editors: Martina Hasler, Lukas Munz
