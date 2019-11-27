@@ -10,7 +10,7 @@ os.chdir(dir_path)
 
 # make list of all frames in "pics" folder. Replace "pics" by "pics2400", "pics2500" or "pics2600"
 frames = []
-imgs = glob.glob("pics/*.png")  #  (note: for me... for filename in glob.glob(('pics' + str(elevation) + '/*.png')):)
+imgs = glob.glob('pics' + str(elevation) + '/*.png')  #  (note: for me... for filename in glob.glob(('pics' + str(elevation) + '/*.png')):)
 for i in imgs:
     new_frame = Image.open(i)
     frames.append(new_frame)
