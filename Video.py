@@ -4,11 +4,21 @@
 import cv2
 import numpy as np
 import glob
+import os
 
 # set current directory as working directory
 dir_path = os.path.dirname(os.path.realpath(__file__))
 os.chdir(dir_path)
 # os.chdir('C:/Users/User/Documents/geodataanalysis/soliflu')  # set working directory manually
+
+# Choose an elevation
+try:
+    elevation
+except NameError:
+    elevation = input("choose an elevation! take 2400, 2500 or 2600")
+    print("OK")
+else:
+    print("elevation is already defined")
 
 # make list of all frames in "pics" folder
 img_array = []
