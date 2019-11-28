@@ -20,7 +20,7 @@ except NameError:
 else:
     print("elevation is already defined")
 
-# make list of all frames in "pics" folder
+# make a list of all frames in the "pics2400",  "pics2500" or "pics2600" folder
 img_array = []
 for filename in glob.glob(('pics' + str(elevation) + '/*.png')):
     img = cv2.imread(filename)
