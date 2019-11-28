@@ -1,9 +1,9 @@
 # 2019-frost-penetration-soils
 Frost penetration in alpine solifluction lobes dependig on relative water content
 
-The aim of this little project is to visualize data from field masurements in a video or a GIF.
+The aim of this little project is to visualize data from field measurements in a video or a GIF.
 
-A scheme of a solifluction lobe (.png) is colorized depending on measurment values of volumetric water content and temperature below ground.
+A scheme of a solifluction lobe (.png) is colorized depending on measurement values of volumetric water content and temperature below ground.
 
 ## Prerequisits
 - Python 3.7
@@ -18,14 +18,14 @@ A scheme of a solifluction lobe (.png) is colorized depending on measurment valu
   -  opencv-python
   
 ## How to use
-- definde the timeframe of the data to be visualized in Line 21 and line 23   
+- definde the timeframe of the data to be visualized in line 21 and line 22   
   - it is best to choose within:
   
     | Start     | End       |
     |-----------|-------    |
     |01.09.2015 |30.06.2017 |
     
-    One image will be created every houer within the timeframe unless definded differently (see section "What can be adjusted")
+    One image will be created every hour within the timeframe unless defined differently (see section "What can be adjusted")
     
 - there are three scripts
   - PrepFrames.py prepares frames to be packed in a video or gif with the other scripts
@@ -39,9 +39,13 @@ A scheme of a solifluction lobe (.png) is colorized depending on measurment valu
   - a video file or GIF file will be saved in the working directory
   
 ## What can be adjusted
-  - time
-  - elevation
-  - fps (gif und video)
-  - hours to skip
+- PrepFrames.py
+  - line 21 and line 22: time
+  - line 25: elevation
+  - line 66: hours to skip
+- makeVideo.py  
+  - line 33: frames per second
+- makeGIF.py
+  - line 34: frames per second
 
 Authors: Martina Hasler, Lukas Munz
