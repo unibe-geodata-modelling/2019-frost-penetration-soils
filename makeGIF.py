@@ -9,7 +9,7 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 os.chdir(dir_path)
 # os.chdir('C:/Users/User/Documents/geodataanalysis/soliflu')  # set working directory manually
 
-# Choose elevation if it is not definded aleady
+# Choose elevation if it is not defined already
 try:
     elevation
 except NameError:
@@ -18,7 +18,7 @@ except NameError:
 else:
     print("elevation is already defined")
 
-# make list of all frames in "pics" folder. Replace "pics" by "pics2400", "pics2500" or "pics2600"
+# make a list of all frames in the "pics2400", "pics2500" or "pics2600" folder
 frames = []
 imgs = glob.glob('pics' + str(elevation) + '/*.png') 
 for i in imgs:
@@ -29,7 +29,7 @@ for i in imgs:
 
 # Save into a GIF file that loops (forever --> loop=0)
 frames[0].save(('GIF_' + str(elevation) + '.gif'), format='GIF',
-               append_images=frames[:],  # nummber and range of appended frames can be limited (i.e. in case of dificulty with memory) 
+               append_images=frames[:],  # number and range of appended frames can be limited (i.e. in case of difficulty with memory) 
                save_all=True,
                duration=0.05, loop=0) # set time for eacht frame (duration) and how often the GIF will be repeated (0 --> forever)
 frames = []
