@@ -24,7 +24,7 @@ endtag = datetime.strptime('02.08.2015 22:00', '%d.%m.%Y %H:%M')
 # choose elevation for which data should be visualized (2400, 2500 or 2600)
 elevation = 2400
 
-# Create Folder, if it not already exists, to save frames which will be created later
+# Create folder, if it not already exists, to save frames which will be created later
 try:
     os.makedirs('pics' + str(elevation))
 except OSError as e:
@@ -34,11 +34,12 @@ except OSError as e:
         raise
 Ordner = 'pics' + str(elevation) + '/'
 
+# define colormaps for temperature and water content values
 cmap = plt.cm.get_cmap('coolwarm')
 hmap = plt.cm.get_cmap('winter_r')
 hnorm = mp.colors.Normalize(vmin=0, vmax=0.3)
 
-# Center colorramp of temp at zero
+# Center colorramp of temperature at zero
 class MidpointNormalize(colors.Normalize):
     def __init__(self, vmin=None, vmax=None, vcenter=None, clip=False):
         self.vcenter = vcenter
@@ -47,7 +48,6 @@ class MidpointNormalize(colors.Normalize):
     def __call__(self, value, clip=None):
         x, y = [self.vmin, self.vcenter, self.vmax], [0, 0.5, 1]
         return np.ma.masked_array(np.interp(value, x, y))
-
 
 midnorm = MidpointNormalize(vmin=-5, vcenter=0, vmax=5)
 
@@ -58,12 +58,12 @@ sizeII = np.asarray(size)*0.5
 
 subset = file.loc[(file['date.time'] >= starttag) & (file['date.time'] <= endtag) & (file['M_asl'] == elevation)]
 
-# Make list with all time steps within the previously definded time
+# Make list with all time steps within the previously defined time
 datumsliste = []
 datum = starttag
 while datum <= endtag:
     datumsliste.append(datum)
-    datum = datum + timedelta(hours=1) # hours = hier können Zeitschritte übersprungen werden, hours= 2 --> jede 2. Stunde, ganze Zeile weg (#) --> jede halbe Stunde
+    datum = datum + timedelta(hours=1) # hours: specify the timeframe
 
 # save images/ frames in the before created "pics" folder 
 for i in datumsliste:
@@ -92,7 +92,7 @@ for i in datumsliste:
             polygon7 = Polygon([(1200-290, 690+780), (1275-290, 690+780), (1275-290, 750+780), (1200-290, 750+780)], True, color=cmap(midnorm(temp7.values[0])))
             polygon8 = Polygon([(1200-290, 770+780), (1275-290, 770+780), (1275-290, 830+780), (1200-290, 830+780)], True, color=cmap(midnorm(temp8.values[0])))
             
-            # create round paches depending on water content values
+            # create round patches depending on water content values
             hum1 = subset.loc[(subset['auf_unter'] == 'auf') & (i == subset['date.time'])]['m3.m3.VWC.1']
             hum2 = subset.loc[(subset['auf_unter'] == 'auf') & (i == subset['date.time'])]['m3.m3.VWC.2']
             hum3 = subset.loc[(subset['auf_unter'] == 'auf') & (i == subset['date.time'])]['m3.m3.VWC.3']
@@ -135,7 +135,7 @@ for i in datumsliste:
             ax1.add_patch(kreisli7)
             ax1.add_patch(kreisli8)
             
-            # add colotbars
+            # add colorbars
             im1 = ax1.imshow(im, cmap=cmap, norm=midnorm)
             cbar = fig.colorbar(im1, orientation='vertical', pad=-0.02, shrink=0.35)
             cbar.set_label('Temp\n°C', rotation=0, labelpad=5, fontsize=5)
@@ -148,7 +148,7 @@ for i in datumsliste:
             cbar1.set_ticks([0.0, 0.1, 0.2, 0.3])
             cbar1.ax.tick_params(labelsize=5)
             
-            # add desctiption of the frame with time stamp and elevation
+            # add description of the frame with time stamp and elevation
             date = i.strftime('%d.%m.%Y %H:%M')
 
             plt.text(100,100,1, text="Volumetric Water Content (VWC) and" + "\n" + "Temperature Below Ground", fontsize=7, weight='demibold')
@@ -157,8 +157,8 @@ for i in datumsliste:
 
             ax1.set_axis_off()
             
-            # save frame in the previously definded folder
-            plt.savefig(BilderOrt, dpi=im.info['dpi'][0] * 0.75, bbox_inches='tight') # tight entfernt den weissen Rahmen um das Bild --> kleineres File
+            # save frame in the previously defined folder
+            plt.savefig(BilderOrt, dpi=im.info['dpi'][0] * 0.75, bbox_inches='tight')
 
             print(i)
             plt.close()
