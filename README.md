@@ -39,13 +39,13 @@ A scheme of a solifluction lobe (.png) is colorized depending on measurement val
   - a video file or GIF file will be saved in the working directory
   
 ## What can be adjusted
-- PrepFrames.py
+- PrepFrames.py:
   - line 21 and line 22: time
   - line 25: elevation
   - line 66: hours to skip
-- makeVideo.py  
+- makeVideo.py:
   - line 33: frames per second
-- makeGIF.py
+- makeGIF.py:
   - line 34: frames per second
 
 
