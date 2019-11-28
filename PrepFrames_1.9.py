@@ -14,7 +14,7 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 os.chdir(dir_path)
 # os.chdir('C:/Users/User/Documents/geodataanalysis/soliflu')  # set working directory manually
 
-file = pd.read_csv('alldata_utf8.csv', sep=',') # load data
+file = pd.read_csv('alldata_utf8_ClShort.csv', sep=',') # load data
 file['date.time'] = pd.to_datetime(file['date.time'], format='%d.%m.%Y %H:%M') # define date and time format in data
 
 # choose the time for which data will be visualized --> from "starttag" to "endtag" (date and time must be definded)
