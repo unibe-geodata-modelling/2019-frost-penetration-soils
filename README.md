@@ -8,7 +8,7 @@ A scheme of a solifluction lobe (.png) is colorized depending on measurment valu
 ## Prerequisits
 - Python 3.7
 - Have the file "Schema Blauberg weiss clean.png" in the working directory
-- Have the file "alldata_utf8.csv" also in the working directory
+- Have the file "alldata_utf8_ClShort.csv" also in the working directory
 - Install dependencies:
   -  matplotlib
   -  pandas
