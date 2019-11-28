@@ -34,7 +34,7 @@ A scheme of a solifluction lobe (.png) is colorized depending on measurement val
  
 - The scripts can somehow not be executed entirely via the "run" button in PyCharm. Select all (Ctrl + A) and "run" works however.
   
- ## Result
+ ## Results
   - you will find a folder with images in the working directory (one image each hour by default)
   - a video file or GIF file will be saved in the working directory
   
@@ -47,5 +47,6 @@ A scheme of a solifluction lobe (.png) is colorized depending on measurement val
   - line 33: frames per second
 - makeGIF.py
   - line 34: frames per second
+
 
 Authors: Martina Hasler, Lukas Munz
