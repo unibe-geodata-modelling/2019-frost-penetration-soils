@@ -25,12 +25,16 @@ A scheme of a solifluction lobe (.png) is colorized depending on measurement val
     |-----------|-------    |
     |01.09.2015 |30.06.2017 |
     
+    The default is set from 01.09.2015 18:00 to 02.09.2015 22:00 (40 hours / frames)
+    
     One image will be created every hour within the timeframe unless defined differently (see section "What can be adjusted")
     
 - there are three scripts
   - PrepFrames.py prepares frames to be packed in a video or gif with the other scripts
   - makeVideo.py packs the beforehand generated images (.png) to a video
   - makeGIF.py packs the beforehand generated images to a gif file
+ 
+- if the video or the gif script is run subsequently to PrepFrames in the same console, the elevation will remain set. If a different console is used, the user is asked to define the elevation.
  
 - The scripts can somehow not be executed entirely via the "run" button in PyCharm. Select all (Ctrl + A) and "run" works however.
   
@@ -40,13 +44,14 @@ A scheme of a solifluction lobe (.png) is colorized depending on measurement val
   
 ## What can be adjusted
 - PrepFrames.py:
-  - line 21 and line 22: time
-  - line 25: elevation
-  - line 66: hours to skip
+  - line 21 and line 22: time (default is 01.09.2015 18:00 to 02.09.2015 22:00)
+  - line 25: elevation (dafault is 2400)
+  - line 66: hours to skip (default is 1)
 - makeVideo.py:
-  - line 33: frames per second
+  - line 33: frames per second (default is 30)
 - makeGIF.py:
-  - line 34: frames per second
+  - line 34: duration: how many seconds one frame persists (default is 0.05)
+  - line 34: loop: how many times the gif repeats (default is 0, infinite repetition)
 
 
 Authors: Martina Hasler, Lukas Munz
