@@ -13,7 +13,7 @@ os.chdir(dir_path)
 try:
     elevation
 except NameError:
-    elevation = input("choose an elevation! take 2400, 2500 or 2600")
+    elevation = input("choose an elevation! type 2400, 2500 or 2600")
     print("OK")
 else:
     print("elevation is already defined")
@@ -33,3 +33,5 @@ frames[0].save(('GIF_' + str(elevation) + '.gif'), format='GIF',
                save_all=True,
                duration=0.05, loop=0) # set time for eacht frame (duration) and how often the GIF will be repeated (0 --> forever)
 frames = []
+
+print('your gif ' + '"GIF' + str(elevation) + '"' + ' is now ready in ' + str(dir_path))
