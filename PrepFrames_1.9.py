@@ -18,8 +18,8 @@ file = pd.read_csv('alldata_utf8_ClShort.csv', sep=',') # load data
 file['date.time'] = pd.to_datetime(file['date.time'], format='%d.%m.%Y %H:%M') # define date and time format in data
 
 # choose the time for which data will be visualized --> from "starttag" to "endtag" (date and time must be definded)
-starttag = datetime.strptime("01.09.2015 18:00", '%d.%m.%Y %H:%M')  # first possible: "01.09.2015"
-endtag = datetime.strptime('02.09.2015 22:00', '%d.%m.%Y %H:%M')
+starttag = datetime.strptime("23.05.2016 16:00", '%d.%m.%Y %H:%M')  # first possible: "01.09.2015"
+endtag = datetime.strptime('04.06.2016 16:00', '%d.%m.%Y %H:%M')
 
 # choose elevation for which data should be visualized (2400, 2500 or 2600)
 elevation = 2400
@@ -27,9 +27,10 @@ elevation = 2400
 # Create folder, if it not already exists, to save frames which will be created later
 try:
     os.makedirs('pics' + str(elevation))
+    print('created folder "pics' + str(elevation) +'"')
 except OSError as e:
     if e.errno == errno.EEXIST:
-        print("Folder already exists")
+        print('Tried to create folder "pics' + str(elevation) +'" it already exists in ' + '"' + str(dir_path) +'", so now I will save the pictures there.')
     else:
         raise
 Ordner = 'pics' + str(elevation) + '/'
@@ -169,3 +170,5 @@ for i in datumsliste:
         if os.path.exists(BilderOrt):
             print('Frame ' + str(i) + ' already exists')
 
+print('Pictures are now ready to create a video or gif. Continue with "makeVideo.py" or "makeGIF.py"')
+    
