@@ -19,7 +19,7 @@ file['date.time'] = pd.to_datetime(file['date.time'], format='%d.%m.%Y %H:%M') #
 
 # choose the time for which data will be visualized --> from "starttag" to "endtag" (date and time must be definded)
 starttag = datetime.strptime("01.09.2015 18:00", '%d.%m.%Y %H:%M')  # first possible: "01.09.2015"
-endtag = datetime.strptime('02.08.2015 22:00', '%d.%m.%Y %H:%M')
+endtag = datetime.strptime('02.09.2015 22:00', '%d.%m.%Y %H:%M')
 
 # choose elevation for which data should be visualized (2400, 2500 or 2600)
 elevation = 2400
