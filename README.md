@@ -18,16 +18,18 @@ A scheme of a solifluction lobe (.png) is colorized depending on measurement val
   -  opencv-python
   
 ## How to use
-- definde the timeframe of the data to be visualized in line 21 and line 22   
+- start with "PrepFrames.py"
+- definde the timeframe of the data to be visualized in line 21 and line 22
   - it is best to choose within:
   
     | Start     | End       |
     |-----------|-------    |
     |01.09.2016 |30.06.2017 |
     
-    The default is set from 01.09.2015 18:00 to 02.09.2015 22:00 (40 hours / frames)
+    The default is set from 23.05.2016 16:00 to 04.06.2016 16:00 (289 hours / frames)
+    This will make a very short video of nine seconds.
     
-    One image will be created every hour within the timeframe unless defined differently (see section "What can be adjusted")
+    One image will be created for every hour within the timeframe unless defined differently (see section "What can be adjusted")
     
 - there are three scripts
   - PrepFrames.py prepares frames to be packed in a video or gif with the other scripts
