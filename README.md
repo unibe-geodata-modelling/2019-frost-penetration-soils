@@ -46,7 +46,7 @@ A scheme of a solifluction lobe (.png) is colorized depending on measurement val
   
 ## What can be adjusted
 - PrepFrames.py:
-  - line 21 and line 22: time (default is 01.09.2015 18:00 to 02.09.2015 22:00)
+  - line 21 and line 22: time (default is 23.05.2016 16:00 to 04.06.2016 16:00)
   - line 25: elevation (dafault is 2400)
   - line 66: hours to skip (default is 1)
 - makeVideo.py:
