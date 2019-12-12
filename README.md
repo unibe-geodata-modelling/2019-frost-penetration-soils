@@ -23,7 +23,7 @@ A scheme of a solifluction lobe (.png) is colorized depending on measurement val
   
     | Start     | End       |
     |-----------|-------    |
-    |01.09.2015 |30.06.2017 |
+    |01.09.2016 |30.06.2017 |
     
     The default is set from 01.09.2015 18:00 to 02.09.2015 22:00 (40 hours / frames)
     
